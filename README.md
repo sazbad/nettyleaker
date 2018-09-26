@@ -23,7 +23,7 @@ Darwin MacBook-Pro-6.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May 8 15:22:
     -Dio.netty.leakDetection.maxRecords=32
 ```
 3. Run HttpSnoopServer in debug mode
-4. Run HttpPostSender once and wait for all the requests to be done
+4. Run HttpDMErrorClient once and wait for all the requests to be done
 5. Now, give a breakpoint at line 638 of PlatformDependent class at the following and check the usedMemory Value.
 ```
     private static void incrementMemoryCounter(int capacity) {
@@ -31,6 +31,6 @@ Darwin MacBook-Pro-6.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May 8 15:22:
             for (;;) {
                 long usedMemory = DIRECT_MEMORY_COUNTER.get();
 ```
-6. This usedMemory keeps going up for such large HTTP requests and does not go down over time even if there is no active Http requests. This resutls in OutOfDirectMemoryError even though the body size of http requests are lower than the direct memory size been used by Netty.
+6. Run the HttpDMErrorClient again. This time  usedMemory keeps going up for subsequent large HTTP requests and does not go down over time even if there is no active Http requests. This resutls in OutOfDirectMemoryError even though the body size of http requests are lower than the direct memory size been used by Netty.
 
 
