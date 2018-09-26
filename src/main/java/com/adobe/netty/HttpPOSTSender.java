@@ -15,7 +15,7 @@ public class HttpPOSTSender {
         ExecutorService executorService = Executors.newFixedThreadPool(count);
 
 
-     for (int i = 1; i<=200; i ++)
+     for (int i = 1; i<=2000; i ++)
      executorService.execute(()->{
          try {
              URL request = new URL(new URL("http://localhost:8082"), "http://localhost:8082/v1/topics/direct_memory_test/messages");
