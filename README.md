@@ -13,7 +13,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
 Darwin MacBook-Pro-6.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May 8 15:22:16 PDT 2018; root:xnu-4570.61.1~1/RELEASE_X86_64 x86_64
 
 ## Steps to reproduce
-1. do "mvn clean install"  under the root of this project
+1. do `mvn clean install`  under the root of this project
 2. Configure HttpSnoopServer with the following configuration that we used to run the HttpSnoopServer is
 ```
     -Xms10M
