@@ -16,11 +16,11 @@ Darwin MacBook-Pro-6.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May 8 15:22:
 
 1. Configure HttpSnoopServer with the following
 configuration that we used to run the HttpSnoopServer is
--Xms10M
--Xmx10M
--XX:MaxDirectMemorySize=3M
--Dio.netty.leakDetectionLevel=PARANOID
--Dio.netty.leakDetection.maxRecords=32
+    -Xms10M
+    -Xmx10M
+    -XX:MaxDirectMemorySize=3M
+    -Dio.netty.leakDetectionLevel=PARANOID
+    -Dio.netty.leakDetection.maxRecords=32
 2. Run HttpSnoopServer in debug mode
 3. Run HttpPostSender once and wait for all the requests to be done
 4. Now, give a breakpoint at line 638 of PlatformDependent class at the following and check the usedMemory Value.
