@@ -31,6 +31,6 @@ Darwin MacBook-Pro-6.local 17.6.0 Darwin Kernel Version 17.6.0: Tue May 8 15:22:
             for (;;) {
                 long usedMemory = DIRECT_MEMORY_COUNTER.get();
 ```
-5. This usedMemory keeps going up for such large HTTP requests and does not go down over time even if there is no active Http requests
+5. This usedMemory keeps going up for such large HTTP requests and does not go down over time even if there is no active Http requests. This resutls in OutOfDirectMemoryError even though the body size of http requests are lower than the direct memory size been used by Netty.
 
 
