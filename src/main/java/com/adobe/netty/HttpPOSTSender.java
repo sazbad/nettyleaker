@@ -29,7 +29,6 @@ public class HttpPOSTSender {
              conn.setDoOutput(true);
              conn.setRequestProperty("Content-type","x-protobuf");
              conn.setRequestProperty("Authorization", "Bearer " + new String(new char[1200]).replace("\0", "x"));
-             //conn.setRequestProperty("Authorization", "Bearer " + "eyJ4NXUiOiJ");
              try (OutputStream postStream = conn.getOutputStream()) {
                  postStream.write(new byte[1000100]);
              }
