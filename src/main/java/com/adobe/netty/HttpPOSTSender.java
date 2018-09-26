@@ -32,7 +32,6 @@ public class HttpPOSTSender {
              try (OutputStream postStream = conn.getOutputStream()) {
                  postStream.write(new byte[1000100]);
              }
-
              System.out.println("Result: " + conn.getResponseCode());
          } catch (Exception ex) {
              ex.printStackTrace();
